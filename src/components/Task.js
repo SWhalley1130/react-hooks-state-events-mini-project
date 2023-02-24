@@ -1,6 +1,10 @@
 import React from 'react'
 
 function Task({ text, category, onDelete }) {
+
+
+
+	
 	return (
 		<div className='task'>
 			<div className='label'>{category}</div>

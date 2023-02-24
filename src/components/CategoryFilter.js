@@ -1,28 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 function CategoryFilter({ CATEGORIES, handleCatButton }) {
-	// const [buttonClass, setButtonClass] = useState('')
+	const [clickedButton, setClickedButton] = useState({})
 
   function handleClick(e) {
     
     handleCatButton(e)
     let wantedButton = arrayOfButtons.find(button => button.key === e.target.id)
-    console.log(wantedButton)
-    
-    // console.log(selectedButton)
-  
-    // setButtonClass({
-    //   className: 'selected',
-    //   onClick: {handleClick},
-    //   id: wantedButton.id,
-    //   key: wantedButton.key
-    // })
-  
+    setClickedButton(wantedButton)
   }
+
+
   
   let arrayOfButtons = CATEGORIES.map((cat) => (
     <button
-      // className={buttonClass}
+      className={clickedButton.key===cat ? "selected" : ""}
       onClick={handleClick}
       id={cat}
       key={cat}

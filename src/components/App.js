@@ -41,6 +41,7 @@ function App() {
 			[e.target.name]: e.target.value
 		})
 	}
+	
 	return (
 		<div className='App'>
 			<h2>My tasks</h2>
@@ -51,7 +52,7 @@ function App() {
 			<NewTaskForm
 				CATEGORIES={CATEGORIES}
 				formData={formData}
-				handleFormSubmit={handleFormSubmit}
+				onTaskFormSubmit={handleFormSubmit}
 				handleFieldChange={handleFieldChange}
 			/>
 			<TaskList tasks={taskList} onDelete={handleDelete} />
